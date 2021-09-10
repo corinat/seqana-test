@@ -30,8 +30,14 @@ Uses gunicorn + nginx.
     Test it out at [http://localhost:1337/template/qgis2web/index.html](http://localhost:1337/template/qgis2web/index.html). 
 
 
-To terminate containers for both environments (dev and prod):
+    To terminate containers for both environments (dev and prod):
 
-    ```sh
-    docker-compose down
-    ``` 
+        ```sh
+        docker-compose down
+        ``` 
+    
+    If shuting down the containers in production gives any errors, just run:
+
+        ```sh
+        docker-compose down --remove-orphans
+        ``` 
