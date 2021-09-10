@@ -12,7 +12,7 @@ Uses the default Flask development server.
 1. Build the images and run the containers:
 
     ```sh
-    $ docker-compose up -d --build
+    docker-compose up -d --build
     ```
 
     Test it out at [http://127.0.0.1:5000/template/qgis2web/index.html](http://127.0.0.1:5000/template/qgis2web/index.html). 
@@ -24,7 +24,14 @@ Uses gunicorn + nginx.
 1. Build the images and run the containers:
 
     ```sh
-    $ docker-compose -f docker-compose.prod.yml up -d --build
+    docker-compose -f docker-compose.prod.yml up -d --build
     ```
 
     Test it out at [http://localhost:1337/template/qgis2web/index.html](http://localhost:1337/template/qgis2web/index.html). 
+
+
+To terminate containers for both environments (dev and prod):
+
+    ```sh
+    docker-compose down
+    ``` 
