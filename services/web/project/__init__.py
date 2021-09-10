@@ -16,10 +16,6 @@ from sqlalchemy import create_engine
 from flask import Flask, render_template
 import json
 
-indexes = []
-runner_index = []
-testing = []
-indexes2 = []
 
 app = Flask(__name__, template_folder='template')
 app.config.from_object("project.config.Config")
@@ -37,18 +33,6 @@ class ConnectPostgres:
         db = scoped_session(sessionmaker(bind=db_string))
         cur = conn.cursor()
         return conn, cur
-
-
-
-
-
-@app.route("/")
-def hello_world():
-    return render_template(
-        'hello.txt',
-        title="hello-world",
-        description="Smarter page templates with Flask & Jinja."
-    )
 
 
 @app.route("/template/<path:filename>")
